@@ -340,6 +340,7 @@ func (c *Context) attachTarget(ctx context.Context, targetID target.ID) error {
 		actions = append(actions, []Action{
 			inspector.Enable(),
 			page.Enable(),
+			page.SetLifecycleEventsEnabled(true),
 			dom.Enable(),
 			css.Enable(),
 			target.SetDiscoverTargets(true),
